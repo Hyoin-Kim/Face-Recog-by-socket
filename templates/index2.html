@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <title>Video Streaming Demonstration</title>
+  </head>
+  <body>
+    <h1>Video Streaming Demonstration</h1>
+    <div style="display: inline-block;" class="video-wrapper">
+    	<img id="bg" src="{{ url_for('video_feed') }}">
+    </div>
+    <div style="display: inline-block;vertical-align: top;margin-left:10px;">
+    	<a class="user" onclick="select_user('Hyoin')" style="text-decoration: none;color:black;">Hyoin</a>
+    </div>
+  </body>
+</html>
+<script>
+function select_user(name)
+{	
+	if(name == "Hyoin")
+		var text = '<img id="bg" src="{{ url_for('video_feed', name='Hyoin') }}">';
+	document.getElementsByClassName("video-wrapper").html("");
+	document.getElementsByClassName("video-wrapper").append(text);
+}
+</script>
+
